@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>vendedor</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+    <form action="pt02.php" class="formulario" method="post"> 
+        <p>Preencha os dados:</p>
+        
+        <div class="field">
+            <label for="vendedor">Seu Nome:</label>
+            <input type="text" id="vendedor" name="vendedor" placeholder="Digite seu Nome" required>
+        </div>
+            <label for="select box">Digite sua únidade:</label>
+            <div class="field">
+            <input type="select box" id="unidades" name="unidades" placeholder="ex: Pinheiros/Osasco/Vila Mariana">    
+            </div>
+
+        
+        <div class="field">
+            <label for="data">Sua data de contrato:</label>
+            <input type="date" id="data" name="data" placeholder="Digite sua data de contrato"  required>
+        </div>        
+        
+        <div class="field">
+            <label for="salario">Seu salario:</label>
+            <input type="number" id="salario" name="salario" placeholder="informe seu salario" required>
+        </div>
+
+        <div class="field">
+            <label for="pecas">quantidade de peças vendidas:</label>
+            <input type="number" id="pecas" name="pecas" placeholder="informe as pecas vendidas" required>
+        </div>
+
+ 
+        <input type="submit" name="acao" value="Enviar">
+    
+       
+    </form>
+ 
+  
+ 
+</body>
+</html>
