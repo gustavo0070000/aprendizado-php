@@ -1,8 +1,13 @@
 <?php
 $nameErr = $emailErr = $genderErr = $dataErr = "";
 $name = $email = $gender = $data = "";
+$findme   = 'scicrop';
+$findme2 = 'gmail';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//$idade = "";//
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+    
   if (empty($_POST["name"])) {
     $nameErr = "Name is required";
   } else {
@@ -15,12 +20,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $emailErr = "Email is required";
   } else {
     $email = test_input($_POST["email"]);
-    // check if e-mail address is well-formed
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Invalid email format";
+    $pos =  strpos($email, $findme);
+    $pos =  strpos($email, $findme2);
+  if ($pos === false ){ //if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+     $emailErr = "Invalid email format";
     }
   }
-    
+
+   //if ($email != "gmail.com")
+     //   $emailErr = "Invalid email format";
   if (empty($_POST["data"])) {
     $data = "";
   } else {
@@ -30,17 +38,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
  
 
 
-  
+    
+}
+    
+ 
 
   if (empty($_POST["gender"])) {
     $genderErr = "Gender is required";
   } else {
     $gender = test_input($_POST["gender"]);
   }
-}
+
 
 function test_input($data) {
-  return $data;
+    return $data;
 }
 ?>
 
@@ -66,6 +77,7 @@ function test_input($data) {
 </form>
 
 <?php
+$idade = 2000 - $data ;
 echo "<h2>Mensagem:</h2>";
-echo "$name do sexo $gender, tem $data de idade! Estaremos lhe enviando um email no endereço $email.";
+echo "$name do sexo $gender, tem $idade anos de idade! Estaremos lhe enviando um email no endereço $email.";
 ?>
